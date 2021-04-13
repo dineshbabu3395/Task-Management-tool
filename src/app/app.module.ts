@@ -4,8 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TasksComponent } from './components/tasks/tasks.component';
-import { TaskComponent } from './components/task/task.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import {MatListModule} from '@angular/material/list';
@@ -18,7 +17,9 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatNativeDateModule} from '@angular/material/core';
 import { MatInputModule } from '@angular/material/input';
+import {MatTooltipModule} from '@angular/material/tooltip';
 
+import { OwlDateTimeModule, OwlNativeDateTimeModule } from 'ng-pick-datetime';
 
 import { FormsModule } from '@angular/forms';
 
@@ -26,14 +27,12 @@ import { FormsModule } from '@angular/forms';
   declarations: [
     AppComponent,
     TasksComponent,
-    TaskComponent,
     ModalComponent,
     
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule,
     FormsModule,
     MatListModule,
     MatIconModule,
@@ -44,6 +43,9 @@ import { FormsModule } from '@angular/forms';
     MatDatepickerModule,
     MatNativeDateModule,
     MatInputModule,
+    MatTooltipModule,
+    OwlDateTimeModule, 
+    OwlNativeDateTimeModule,
     BrowserAnimationsModule
   ],
   providers: [],

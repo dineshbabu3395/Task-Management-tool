@@ -6,14 +6,18 @@ import { Task } from '../shared/task';
 })
 export class TaskService {
   currentDate: Date = new Date();
+  min:number = 1;
+  max:number = 100;
   mockData: Task[] = [
-    { _id : 1, description : 'take note', dueDate : new Date(this.currentDate.setDate(this.currentDate.getDate() - 1)) ,completed: false},
-    { _id : 2 , description : 'watch movie', dueDate : new Date , completed: false}
+    { _id : this.generateRandomNumber(this.max,this.min), description : 'take note', dueDate : new Date(this.currentDate.setDate(this.currentDate.getDate() - 1)) ,completed: false},
+    { _id : this.generateRandomNumber(this.max,this.min) , description : 'watch movie', dueDate : new Date , completed: false},
+    { _id : this.generateRandomNumber(this.max,this.min) , description : 'football', dueDate :  new Date(Date.now() + ( 3600 * 1000 * 24)) , completed: true}
   ]
   constructor() { }
 
   addTask(task: Task){
-    this.mockData.push(task);
+    const randomId = this.generateRandomNumber(this.max,this.min);
+    this.mockData.push({ _id: randomId , ...task});
   }
 
   editTask(task: Task){
@@ -33,5 +37,9 @@ export class TaskService {
   markAsComplete(task: Task){
     let filteredTask = this.mockData.findIndex(data => data._id === task._id);
     this.mockData[filteredTask].completed = true;
+  }
+
+  generateRandomNumber(max,min){
+    return Math.floor(Math.random() * (max - min + 1) + min);
   }
 }

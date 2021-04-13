@@ -52,4 +52,11 @@ export class TasksComponent implements OnInit {
   markAsComplete(task: Task){
     this.taskService.markAsComplete(task);
   }
+  getToolTip(task: Task){
+    if(task.completed){
+      return `Task has been completed`;
+    }else if(task.dueDate < this.currentDate){
+      return `Task has past due date`;
+    }
+  }
 }

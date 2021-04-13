@@ -1,19 +1,25 @@
+<h2>TASK MANAGEMENT</h2>
 <mat-list dense>
-    <h2 matSubheader>TASK MANAGEMENT</h2>
-    <mat-list-item [class.completed]="task.completed" [ngClass]='{"past-due-date": (task.dueDate < currentDate)}' *ngFor="let task of tasks">
+    <mat-list-item [class.completed]="task.completed" [ngClass]='{"past-due-date": (task.dueDate < currentDate)}' [matTooltip]="getToolTip(task)" *ngFor="let task of tasks">
         <mat-icon matListIcon>note</mat-icon>
-        <h4 matLine>{{task?.description}}</h4>
-        <p matLine>{{task?.dueDate | date}}</p>
+        <h4 matLine>{{task?.description | uppercase}}</h4>
+        <p matLine>{{task?.dueDate | date:'short'}}</p>
         <section>
             <div class="button-row">
               <div class="flex-container">
-                <button mat-icon-button color="primary" (click)="markAsComplete(task)">
+                <button mat-icon-button 
+                matTooltip="Mark as complete"
+                color="primary" (click)="markAsComplete(task)">
                   <mat-icon>done</mat-icon>
                 </button>
-                <button mat-icon-button color="primary" (click)="editTask(task)">
+                <button mat-icon-button 
+                matTooltip="Edit"
+                color="primary" (click)="editTask(task)">
                   <mat-icon>edit</mat-icon>
                 </button>
-                <button mat-icon-button color="accent" (click)="deleteTask(task)">
+                <button mat-icon-button 
+                matTooltip="Delete"
+                color="accent" (click)="deleteTask(task)">
                   <mat-icon>delete</mat-icon>
                 </button>
               </div>

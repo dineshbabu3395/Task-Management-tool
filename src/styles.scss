@@ -1,9 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
 
+@import "~ng-pick-datetime/assets/style/picker.min.css";
+
 body{
     background-color: #dfe6e9 !important;
 }
-/* Importing Bootstrap SCSS file. */
 
 html, body { height: 100%; }
 body { margin: 0; font-family: 'Oswald', sans-serif !important;}
+
+.mat-list {
+    height: 400px;
+    overflow-y: auto;
+}

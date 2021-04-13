@@ -5,12 +5,20 @@
 }
 
 .completed{
-    pointer-events: none;
-    background-color: rgba(0,0,0,0.2);
+    background-color: rgb(117 220 24 / 29%);
     text-decoration-line: line-through; 
+    section{
+        pointer-events: none;
+    }
 }
 
 .past-due-date {
-    pointer-events: none;
-    background-color: rgba(0,0,0,0.2);
+    background-color: rgb(222 94 19 / 20%);
+    section{
+        pointer-events: none;
+    }
+}
+
+.mat-list-item {
+    margin-bottom: 1em;
 }
