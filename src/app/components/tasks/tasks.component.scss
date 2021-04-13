@@ -1,0 +1,16 @@
+.add-task-btn {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+}
+
+.completed{
+    pointer-events: none;
+    background-color: rgba(0,0,0,0.2);
+    text-decoration-line: line-through; 
+}
+
+.past-due-date {
+    pointer-events: none;
+    background-color: rgba(0,0,0,0.2);
+}
