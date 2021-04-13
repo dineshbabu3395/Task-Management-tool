@@ -13,7 +13,7 @@ this can be achived using routes i.e, passing id of each task to edit in the new
 Choose Dialog for better user experience
 
 ## features
-task with light-red background indicates the task has past the due date
-task with light-green background indicates the task has been completed
+task with light-red background indicates the task has past the due date   
+task with light-green background indicates the task has been completed  
 task can be edited and deleted with respective buttons in the task
 
