@@ -22,12 +22,14 @@ import {MatTooltipModule} from '@angular/material/tooltip';
 import { OwlDateTimeModule, OwlNativeDateTimeModule } from 'ng-pick-datetime';
 
 import { FormsModule } from '@angular/forms';
+import { PageNotFoundComponent } from './shared/pageNotFound/page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TasksComponent,
     ModalComponent,
+    PageNotFoundComponent,
     
   ],
   imports: [
